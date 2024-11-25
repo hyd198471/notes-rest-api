@@ -1,0 +1,22 @@
+{
+  "printWidth": 120,
+  "singleQuote": true,
+  "useTabs": false,
+  "tabWidth": 2,
+  "semi": true,
+  "bracketSpacing": true,
+  "trailingComma": "none",
+  "attributeGroups": [
+    "$ANGULAR_STRUCTURAL_DIRECTIVE",
+    "^(id|name)$",
+    "^class$",
+    "\\[ng",
+    "$DEFAULT",
+    "^aria-",
+    "$ANGULAR_TWO_WAY_BINDING",
+    "$ANGULAR_INPUT",
+    "$ANGULAR_OUTPUT"
+  ],
+  "attributeSort": "ASC",
+  "endOfLine": "lf"
+}

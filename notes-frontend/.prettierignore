@@ -1,0 +1,18 @@
+# Add files here to ignore them from prettier formatting
+
+/dist
+/coverage
+
+# IDE
+.vscode/**/*.*
+
+# Angular
+/.angular
+.eslintrc.json
+angular.json
+*.conf.js
+**/tsconfig*.json
+**/mocks/*.json
+src/app/model/**/*.*
+package.json
+package-lock.json
