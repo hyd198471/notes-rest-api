@@ -8,7 +8,7 @@ import { PrimeNGModule } from './primeng.module';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, BrowserModule,BrowserAnimationsModule, PrimeNGModule],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
