@@ -20,5 +20,6 @@ export const appConfig: ApplicationConfig = {
             prodMode: !isDevMode(),
         },
         loader: TranslocoHttpLoader
-    }), provideStore()]
+    }), provideStore(),
+    provideState({name: STATE_NAME, reducer:noteReducer}), provideEffects([NoteEffect])]
 };

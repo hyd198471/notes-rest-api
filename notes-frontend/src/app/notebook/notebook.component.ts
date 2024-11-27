@@ -3,17 +3,15 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { PrimeNGModule } from '../primeng.module';
 import { TranslocoModule } from '@jsverse/transloco';
 import { CommonModule } from '@angular/common';
-import { Store, StoreModule } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { noteBookActions as actions } from './store/notebook.action';
 import { noteReducer, STATE_NAME } from './store/notebook.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { NoteEffect } from './store/notebook.effect';
-import { NoteStoreModule } from './store/notebook.module';
-
 @Component({
   selector: 'app-notebook',
   standalone: true,
-  imports: [ReactiveFormsModule, PrimeNGModule, TranslocoModule, CommonModule, NoteStoreModule],
+  imports: [ReactiveFormsModule, PrimeNGModule, TranslocoModule, CommonModule],
   templateUrl: './notebook.component.html',
   styleUrl: './notebook.component.scss'
 })
