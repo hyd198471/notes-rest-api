@@ -1,4 +1,24 @@
-<ng-container *transloco="let T">
-    
-
+<ng-container *transloco="let T; prefix: 'notebook'" class="card flex justify-content-center">
+    <form [formGroup]="form">
+        <p-card header="{{ T('title')}}" [style]="{ width: '360px'}">
+            <ng-template pTemplate="content">
+                <p-floatLabel>
+                    <input pInputText id="name" formControlName="name" />
+                    <label for="name">{{ T('name') }}</label>
+                </p-floatLabel>
+                <br />
+                <br />
+                <p-floatLabel>
+                    <input pInputText id="description" formControlName="description" />
+                    <label for="description">{{ T('description') }}</label>
+                </p-floatLabel>
+            </ng-template>
+            <ng-template pTemplate="footer">
+                <div class="flex gap-3 mt-1">
+                    <p-button label="{{ T('save') }}" class="w-full" styleClass="w-full" icon="pi pi-check"
+                        (onClick)="submit()" [disabled]="!form.valid" />
+                </div>
+            </ng-template>
+        </p-card>
+    </form>
 </ng-container>
