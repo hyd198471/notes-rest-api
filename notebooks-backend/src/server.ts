@@ -1,5 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import cors, { CorsOptions } from 'cors'; 
 import { notebookRouter } from './routes';
 import bodyParser from 'body-parser';
 
@@ -8,7 +9,13 @@ const port = process.env.PORT;
 
 const DB_URL = process.env.DB_URL;
 
+const corsOptions :CorsOptions= {
+    origin: 'http://localhost:4200',
+    optionsSuccessStatus: 200
+}
+
 app.use(bodyParser.json());
+app.use(cors(corsOptions));
 app.use('/api/notebooks', notebookRouter);
 console.log('Connecting to Notebook DB init');
 
