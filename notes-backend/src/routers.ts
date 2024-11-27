@@ -44,7 +44,7 @@ noteRouter.post('/', async (req,res,next)=>{
         }
         const note = new Note({title, content,validateNotebookId});
         await note.save();
-        res.status(201).json({data: note})
+        res.status(201).json(note)
 
     } catch (err) {
         next(err);
@@ -56,7 +56,7 @@ noteRouter.post('/', async (req,res,next)=>{
 noteRouter.get('/', async (req,res,next)=>{
     try {
         const notes = await Note.find();
-       return res.json({data: notes})
+       return res.json(notes)
 
     } catch (err) {
         next(err);
@@ -73,7 +73,7 @@ noteRouter.get('/', async (req,res,next)=>{
             return res.status(404).json({error: 'Note not found'});
         }
 
-       return res.json({data: note})
+       return res.json(note)
 
     } catch (err) {
         next(err);
@@ -88,7 +88,7 @@ noteRouter.get('/', async (req,res,next)=>{
             return res.status(404).json({error: 'Note not found'});
         }
 
-       return res.json({data: note})
+       return res.json(note)
 
     } catch (err) {
         next(err);

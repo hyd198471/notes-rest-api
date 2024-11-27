@@ -35,7 +35,7 @@ export class NotebookComponent implements OnInit {
   submit() {
     const value = this.form.getRawValue();
     this._store.dispatch(
-      actions.createNotebook(value)
+      actions.createNotebook({notebook: value})
     )
   }
 

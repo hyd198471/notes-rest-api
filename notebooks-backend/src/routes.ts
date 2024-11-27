@@ -26,7 +26,7 @@ notebookRouter.post('/', async (req,res,next)=>{
         }
         const notebook = new Notebook({name, description});
         await notebook.save();
-        res.status(201).json({data: notebook})
+        res.status(201).json(notebook)
 
     } catch (err) {
         next(err);
@@ -38,7 +38,7 @@ notebookRouter.post('/', async (req,res,next)=>{
 notebookRouter.get('/', async (req,res)=>{
     try {
         const notebooks = await Notebook.find();
-       return res.json({data: notebooks})
+       return res.json(notebooks)
 
     } catch (err) {
         console.error(err);
@@ -56,7 +56,7 @@ notebookRouter.get('/', async (req,res)=>{
             return res.status(404).json({error: 'Notebook not found'});
         }
 
-       return res.json({data: notebook})
+       return res.json(notebook)
 
     } catch (err) {
         next(err);
@@ -71,7 +71,7 @@ notebookRouter.get('/', async (req,res)=>{
             return res.status(404).json({error: 'Notebook not found'});
         }
 
-       return res.json({data: notebook})
+       return res.json(notebook)
 
     } catch (err) {
         next(err);
