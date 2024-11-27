@@ -32,3 +32,4 @@ export function errorDefault<T>(): MonoTypeOperatorFunction<T> {
       );
   }
   
+  export type ActionFault<F = unknown> = Record<'fault', F>;
