@@ -21,6 +21,9 @@ RUN npm run build
 # Use official nginx image as the base image
 FROM nginx:latest
 
+# default location
+COPY nginx.conf /etc/nginx/nginx.conf
+
 # Copy the build output to replace the default nginx contents.
 COPY --from=build /usr/local/app/dist/notes-frontend/browser /usr/share/nginx/html
 
