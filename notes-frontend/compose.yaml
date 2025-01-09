@@ -1,0 +1,16 @@
+name: notes-app
+services:
+  notes-app:
+    build:
+      context: .  # Build the image from the current directory
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"  # Exposes container's port 80 to host's port 80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro  # Ensure nginx.conf is in sync with the host
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

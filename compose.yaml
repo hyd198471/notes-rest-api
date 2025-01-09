@@ -1,6 +1,7 @@
 include:
   - notebooks-backend/compose.yaml
   - notes-backend/compose.yaml
+  - notes-frontend/compose.yaml
 
 services:
   reverse-proxy:
@@ -16,6 +17,5 @@ services:
       - type: bind
         source: ./reverse-proxy/nginx.conf
         target: /etc/nginx/nginx.conf
-
 networks:
   notes-app-net:

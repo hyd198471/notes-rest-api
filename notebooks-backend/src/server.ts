@@ -10,7 +10,7 @@ const port = process.env.PORT;
 const DB_URL = process.env.DB_URL;
 
 const corsOptions :CorsOptions= {
-    origin: 'http://localhost:4200',
+    origin: 'http://127.0.0.1:4200',
     optionsSuccessStatus: 200
 }
 
