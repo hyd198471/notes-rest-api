@@ -1,11 +1,15 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
+  "folders": [
+    {
+      "path": ".",
+    },
+  ],
+  "settings": {
     "angular.enable-strict-mode-prompt": false,
-	"editor.formatOnSave": true
-  }
+    "editor.formatOnSave": true,
+    "eslint.validate": ["javascript", "typescript", "html"],
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+    },
+  },
 }

@@ -2,7 +2,6 @@ import { OnDestroy } from '@angular/core';
 import { MonoTypeOperatorFunction, Observable, Subject, takeUntil } from 'rxjs';
 import { AbstractConstructor, Constructor, MixinBaseClass } from './mixin-types';
 
-
 // --------------------------------------
 // Observable auto unsubscription mixin
 // --------------------------------------
@@ -32,7 +31,8 @@ interface CanSubscribeDestroy extends OnDestroy {
   /* protected */ destroying<T>(obs: Observable<T>): Observable<T>;
 }
 
-type CanSubscribeDestroyCtor = Constructor<CanSubscribeDestroy> & AbstractConstructor<CanSubscribeDestroy>;
+type CanSubscribeDestroyCtor = Constructor<CanSubscribeDestroy> &
+  AbstractConstructor<CanSubscribeDestroy>;
 
 interface MaybeOnDestroy extends Partial<OnDestroy> {
   // must explicitly override because `Partial` loses method metainfo

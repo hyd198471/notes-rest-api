@@ -7825,3 +7825,9 @@ notes-backend/node_modules/yocto-queue/index.js
 notes-backend/node_modules/yocto-queue/license
 notes-backend/node_modules/yocto-queue/package.json
 notes-backend/node_modules/yocto-queue/readme.md
+.idea/misc.xml
+.idea/modules.xml
+.idea/notes-rest-api.iml
+.idea/prettier.xml
+.idea/vcs.xml
+.idea/inspectionProfiles/Project_Default.xml

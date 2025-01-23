@@ -9,16 +9,24 @@ import { provideState, provideStore } from '@ngrx/store';
 import { noteReducer, STATE_NAME } from './notebook/store/notebook.reducer';
 import { NoteEffect } from './notebook/store/notebook.effect';
 import { provideEffects } from '@ngrx/effects';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideHttpClient(), provideTransloco({
-        config: {
-            availableLangs: ['en'],
-            defaultLang: 'en',
-            // Remove this option if your application doesn't support changing language in runtime.
-            reRenderOnLangChange: true,
-            prodMode: !isDevMode(),
-        },
-        loader: TranslocoHttpLoader
-    }), provideStore()]
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideHttpClient(),
+    provideTransloco({
+      config: {
+        availableLangs: ['en'],
+        defaultLang: 'en',
+        // Remove this option if your application doesn't support changing language in runtime.
+        reRenderOnLangChange: true,
+        prodMode: !isDevMode(),
+      },
+      loader: TranslocoHttpLoader,
+    }),
+    provideStore(),
+    provideAnimations(),
+  ],
 };

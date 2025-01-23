@@ -1,17 +1,17 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Action, ActionCreator, Creator, Store } from "@ngrx/store";
-import { UnaryFunction } from "../types/function.type";
-import { catchError, concatMap, map, Observable, of } from "rxjs";
-import { ActionFault } from "./error-default.op";
+import { Action, ActionCreator, Creator, Store } from '@ngrx/store';
+import { UnaryFunction } from '../types/function.type';
+import { catchError, concatMap, map, Observable, of } from 'rxjs';
+import { ActionFault } from './error-default.op';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class EffectUtil {
-    constructor(
-        public readonly actions$: Actions,
-        public readonly store: Store,
-      ) {}
-        /**
+  constructor(
+    public readonly actions$: Actions,
+    public readonly store: Store
+  ) {}
+  /**
    * Convenience function for creating effects with dedicated action, success and failure phases.
    * @param action the action to be observed.
    * @param actionCallFn the function to run once the action has been detected.

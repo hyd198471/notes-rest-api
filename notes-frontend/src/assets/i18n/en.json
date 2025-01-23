@@ -3,6 +3,11 @@
         "title": "Notebooks Input",
         "name": "Name",
         "description": "Description",
-        "save": "save"
+        "save": "save",
+        "actions": "actions",
+        "cancel": "cancel",
+        "edit": "edit",
+        "delete": "delete",
+        "addNotebook": "add Notebook"
     }
 }
