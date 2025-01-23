@@ -14,5 +14,8 @@ export const noteBookActions = createActionGroup({
     'Update Notebook': props<{ notebook: Notebook; id: number }>(),
     'Update Notebook Success': props<{ notebook: Notebook }>(),
     'Update Notebook Failure': props<ActionFault>(),
+    'Delete Notebook': props<{ id: string }>(),
+    'Delete Notebook Success': props<{ id: string }>(),
+    'Delete Notebook Failure': props<ActionFault>(),
   },
 });

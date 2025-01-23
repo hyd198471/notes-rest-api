@@ -92,6 +92,8 @@ export class NotebookComponent extends mixinSubscribeDestroy() implements OnInit
   }
 
   delete(rowData: Notebook) {
-    this.notebooks = this.notebooks.filter((notebook) => notebook !== rowData);
+    if (rowData._id) {
+      this._store.dispatch(actions.deleteNotebook({ id: rowData._id }));
+    }
   }
 }

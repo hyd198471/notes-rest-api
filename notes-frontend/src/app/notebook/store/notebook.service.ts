@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Notebook } from '../notebook';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
 import { objectClone } from '../../vendor/types/object.type';
 import { errorDefault } from '../../vendor/rxjs/error-default.op';
@@ -24,5 +24,10 @@ export class NotebookService {
     return this.http
       .put<Notebook>(`${environment.noteBooksBackendUrl}/${id}`, objectClone(notebook))
       .pipe(errorDefault());
+  }
+
+  deleteNotebook(id: string): Observable<string> {
+    this.http.delete<string>(`${environment.noteBooksBackendUrl}/${id}`).pipe(errorDefault());
+    return of(id);
   }
 }

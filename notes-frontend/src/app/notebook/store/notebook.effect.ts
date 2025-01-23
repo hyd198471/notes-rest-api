@@ -33,4 +33,11 @@ export class NoteEffect {
     actions.updateNotebookSuccess,
     actions.updateNotebookFailure
   );
+
+  deleteNotebook$ = this.effects.serviceCallFor(
+    actions.deleteNotebook,
+    (action) => this.service.deleteNotebook(action.id).pipe(map((id) => ({ id }))),
+    actions.deleteNotebookSuccess,
+    actions.deleteNotebookFailure
+  );
 }
