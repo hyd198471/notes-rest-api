@@ -48,11 +48,11 @@ export const noteReducer = createReducer(
   on(actions.updateNotebookSuccess, (state, action) => ({
     ...state,
     notebooks: reducerReplaceItem(state.notebooks, action.notebook, (item) => item._id),
-  })),
-
-  on(actions.deleteNotebookFailure, (state) => ({ ...state })),
-  on(actions.deleteNotebookSuccess, (state, action) => ({
-    ...state,
-    notebooks: state.notebooks.filter((item)=> item._id !== action.id)
   }))
+
+  // on(actions.deleteNotebookFailure, (state) => ({ ...state })),
+  // on(actions.deleteNotebookSuccess, (state, action) => ({
+  //   ...state,
+  //   notebooks: state.notebooks.filter((item)=> item._id !== action.id)
+  // }))
 );

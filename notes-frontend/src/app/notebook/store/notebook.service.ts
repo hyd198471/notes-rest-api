@@ -26,8 +26,7 @@ export class NotebookService {
       .pipe(errorDefault());
   }
 
-  deleteNotebook(id: string): Observable<string> {
-    this.http.delete<string>(`${environment.noteBooksBackendUrl}/${id}`).pipe(errorDefault());
-    return of(id);
+  deleteNotebook(id: string): Observable<void> {
+    return this.http.delete<void>(`${environment.noteBooksBackendUrl}/${id}`).pipe(errorDefault());
   }
 }

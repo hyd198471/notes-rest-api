@@ -4,7 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: development  
+      target: development 
+    container_name: notebooks-backend 
     ports:
       - 3000:80
     environment:

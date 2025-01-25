@@ -1,10 +1,10 @@
 services:
   notebooks:
-    networks: 
+    networks:
       - notes-app-net
-  # notes-app:
-  #   networks: 
-  #     - notes-app-net
+  notes-app:
+    networks:
+      - notes-app-net
   notes:
     environment:
       - NOTEBOOKS_API_URL=http://notebooks/api/notebooks

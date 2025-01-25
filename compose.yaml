@@ -1,7 +1,7 @@
 include:
   - notebooks-backend/compose.yaml
   - notes-backend/compose.yaml
-  # - notes-frontend/compose.yaml
+  - notes-frontend/compose.yaml
 
 services:
   reverse-proxy:

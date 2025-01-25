@@ -5,6 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
       target: development
+    container_name: notes-backend
     ports:
       - 3001:80
     environment:
